@@ -1,28 +1,46 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <NavBar />
+    <router-view></router-view>
+    <!-- <PostAddNew /> -->
+    <!-- <PostList v-bind:posts="allPosts" v-on:remove-post="removePost" /> -->
+    <!-- <PostList v-bind:posts="allPosts" /> -->
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+// import PostAddNew from "@/components/Layout/PostAddNew.vue";
+// import PostList from "@/components/Layout/PostList.vue";
+// import Vuex from "vuex";
+import NavBar from "./components/Header/NavBar";
 
 export default {
-  name: "App",
+  name: "app",
   components: {
-    HelloWorld
+    NavBar
+  },
+  // computed: Vuex.mapGetters(["allPosts"]),
+  // methods: Vuex.mapActions(["getPosts"]),
+  // computed: {
+  //   allPosts() {
+  //     console.log(this.$store);
+  //     return this.$store.getters.allPosts;
+  //   }
+  // },
+  // methods: {
+  // removePost(id) {
+  //   // console.log(id);
+  //   this.posts = this.posts.filter(el => el.id !== id);
+  // }
+  // },
+  mounted() {
+    this.$store.dispatch("getPosts");
   }
 };
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
