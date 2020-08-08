@@ -1,18 +1,19 @@
 <template>
-  <!-- <PostList v-bind:allPosts="allPosts" /> -->
-  <PostList />
+  <div class="container">
+    <PostList />
+    <Pagination />
+  </div>
 </template>
 
 <script>
-// v-on:remove-post="removePost"
 // @ is an alias to /src
-// import Vuex from "vuex";
-import PostList from "@/components/Layout/PostList.vue";
+import PostList from "@/components/PostList.vue";
+import Pagination from "@/components/Pagination.vue";
+
 export default {
   components: {
-    PostList
+    PostList,
+    Pagination
   }
-  // computed: Vuex.mapGetters(["allPosts"]),
-  // methods: Vuex.mapActions(["getPosts"])
 };
 </script>

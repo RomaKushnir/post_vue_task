@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <NavBar />
-    <router-view></router-view>
+    <router-view />
     <!-- <PostAddNew /> -->
     <!-- <PostList v-bind:posts="allPosts" v-on:remove-post="removePost" /> -->
     <!-- <PostList v-bind:posts="allPosts" /> -->
@@ -12,7 +12,7 @@
 // import PostAddNew from "@/components/Layout/PostAddNew.vue";
 // import PostList from "@/components/Layout/PostList.vue";
 // import Vuex from "vuex";
-import NavBar from "./components/Header/NavBar";
+import NavBar from "./components/NavBar";
 
 export default {
   name: "app",
@@ -34,7 +34,7 @@ export default {
   // }
   // },
   mounted() {
-    this.$store.dispatch("getPosts");
+    // this.$store.dispatch("getPosts");
   }
 };
 </script>
@@ -42,5 +42,9 @@ export default {
 <style>
 #app {
   text-align: center;
+}
+.container {
+  max-width: 900px;
+  margin: 0 auto;
 }
 </style>

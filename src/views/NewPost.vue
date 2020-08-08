@@ -14,12 +14,4 @@
 
 <script>
 // @submit.prevent="createNewPost"
-// import axios from "axios";
-// export default {
-//   mounted() {
-//     axios
-//       .get("https://jsonplaceholder.typicode.com/posts?_limit=10")
-//       .then(res => (this.posts = res));
-//   }
-// };
 </script>

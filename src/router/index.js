@@ -1,9 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-// import NewPost from "../views/NewPost.vue";
-// import Users from "../views/Users.vue";
-// import PostReviewPage from "@/views/PostReviewPage";
 
 Vue.use(VueRouter);
 
@@ -23,11 +20,6 @@ const routes = [
     name: "Users",
     component: () => import("../views/Users.vue"),
   },
-  // {
-  //   path: "/postreview",
-  //   name: "PostReviewPage",
-  //   component: () => import("@/views/PostReviewPage"),
-  // },
 ];
 
 const router = new VueRouter({
