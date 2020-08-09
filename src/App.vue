@@ -2,16 +2,10 @@
   <div id="app">
     <NavBar />
     <router-view />
-    <!-- <PostAddNew /> -->
-    <!-- <PostList v-bind:posts="allPosts" v-on:remove-post="removePost" /> -->
-    <!-- <PostList v-bind:posts="allPosts" /> -->
   </div>
 </template>
 
 <script>
-// import PostAddNew from "@/components/Layout/PostAddNew.vue";
-// import PostList from "@/components/Layout/PostList.vue";
-// import Vuex from "vuex";
 import NavBar from "./components/NavBar";
 
 export default {
@@ -19,20 +13,6 @@ export default {
   components: {
     NavBar
   },
-  // computed: Vuex.mapGetters(["allPosts"]),
-  // methods: Vuex.mapActions(["getPosts"]),
-  // computed: {
-  //   allPosts() {
-  //     console.log(this.$store);
-  //     return this.$store.getters.allPosts;
-  //   }
-  // },
-  // methods: {
-  // removePost(id) {
-  //   // console.log(id);
-  //   this.posts = this.posts.filter(el => el.id !== id);
-  // }
-  // },
   mounted() {
     // this.$store.dispatch("getPosts");
   }
@@ -40,11 +20,25 @@ export default {
 </script>
 
 <style>
-#app {
-  text-align: center;
-}
 .container {
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto;
+}
+
+h1,
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin: 20px 0;
+}
+
+h3,
+p {
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
 }
 </style>

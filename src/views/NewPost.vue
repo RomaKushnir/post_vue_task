@@ -1,17 +1,15 @@
 <template>
-  <form>
-    <label>
-      тема
-      <input type="text" />
-    </label>
-    <label>
-      опис
-      <input type="text" />
-    </label>
-    <button type="submit">опублікувати</button>
-  </form>
+  <div class="container">
+    <h2>Create new post</h2>
+    <PostForm />
+  </div>
 </template>
 
 <script>
-// @submit.prevent="createNewPost"
+import PostForm from "@/components/PostForm";
+export default {
+  components: {
+    PostForm
+  }
+};
 </script>

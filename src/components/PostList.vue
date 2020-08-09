@@ -1,7 +1,7 @@
 <template>
-  <div class="container">
-    <h1>post list</h1>
-    <div class="posts-wrap">
+  <div>
+    <h1>Post list</h1>
+    <div class="posts-wrap" v-if="allPosts.length">
       <PostItem
         v-for="post of allPosts"
         v-bind:post="post"
@@ -9,6 +9,7 @@
         :key="post.id"
       />
     </div>
+    <p class="no-post-plug" v-else>no posts</p>
   </div>
 </template>
 
@@ -33,14 +34,17 @@ export default {
 </script>
 
 <style scoped>
-h1 {
-  font-size: 3rem;
-}
-
 .posts-wrap {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 15px;
+}
+
+.no-post-plug {
+  text-align: center;
+  margin: 100px;
+  font-size: 2rem;
+  text-transform: uppercase;
 }
 </style>

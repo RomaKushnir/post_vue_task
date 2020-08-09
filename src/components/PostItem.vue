@@ -1,10 +1,12 @@
 <template>
-  <div class="post-item">
-    <p>{{post.title}}</p>
-    <p>{{post.body}}</p>
+  <div class="post-item post-item-wrap">
+    <div class="post-item-body">
+      <h3 class="post-header">{{post.title}}</h3>
+      <p class="post-text">{{post.body}}</p>
+    </div>
     <div class="button-wrap">
-      <button class="btn-edit" v-on:click="$emit('edit-post', post.id)">edit</button>
-      <button class="btn-remove" v-on:click="$emit('remove-post', post.id)">remove</button>
+      <!-- <button class="btn-remove" v-on:click="$emit('remove-post', post.id)">remove</button> -->
+      <button class="btn-remove" @click="removePost(post.id)">remove</button>
     </div>
   </div>
 </template>
@@ -16,26 +18,45 @@ export default {
       type: Object,
       required: true
     }
+  },
+  methods: {
+    removePost(id) {
+      // this.$emit("remove-post", this.post.id);
+      this.$emit("remove-post", id);
+    }
   }
 };
 </script>
 
 <style scoped>
+.post-item-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .post-item {
   flex-basis: 48%;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
   width: 100%;
+  min-height: 200px;
   box-sizing: border-box;
-  padding: 20px;
+  padding: 15px;
   margin-bottom: 10px;
   border: 1px solid black;
   border-radius: 5px;
 }
-p {
+
+.post-header {
   font-size: 1.2rem;
+  margin-bottom: 15px;
 }
+.post-header::first-letter {
+  text-transform: capitalize;
+}
+
+.post-text {
+  font-size: 0.9rem;
+}
+
 .button-wrap {
   display: flex;
   justify-content: flex-end;
@@ -45,7 +66,6 @@ button {
   padding: 5px 10px;
   color: white;
   border-radius: 5px;
-  cursor: pointer;
   border: none;
   outline: none;
 }
@@ -53,6 +73,6 @@ button {
   background-color: lightseagreen;
 }
 .btn-remove {
-  background-color: red;
+  background-color: #dc3545;
 }
 </style>

@@ -1,5 +1,4 @@
 export default {
-  actions: {},
   mutations: {
     changePage(state, page) {
       state.page = page;

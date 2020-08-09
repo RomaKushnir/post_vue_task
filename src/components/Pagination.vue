@@ -37,11 +37,10 @@ export default {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  max-width: 220px;
+  max-width: 200px;
   margin: 0 auto 30px;
 }
 button {
-  cursor: pointer;
   border: none;
   outline: none;
   background-color: darkgreen;
@@ -52,9 +51,10 @@ button {
 }
 .current-page {
   border-radius: 5px;
-  padding: 8px 25px;
-  font-size: 1.7rem;
-  background-color: rgb(0, 144, 227);
-  color: white;
+  border: 2px solid green;
+  padding: 0 15px;
+  line-height: 1.3;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 </style>

@@ -9,10 +9,18 @@
       </li>
       <li>
         <router-link to="/users">Users</router-link>
+        <!-- <router-link to="/users" v-on:click.native="getUsers">Users</router-link> -->
       </li>
     </ul>
   </header>
 </template>
+
+<script>
+// import { mapActions } from "vuex";
+export default {
+  // methods: mapActions(["getUsers"])
+};
+</script>
 
 <style scoped>
 header {
@@ -27,7 +35,7 @@ ul {
 }
 ul > li {
   list-style: none;
-  background-color: darkcyan;
+  background-color: #343a40;
   border-radius: 5px;
   margin-left: 15px;
 }
@@ -38,7 +46,7 @@ ul > li > a {
   padding: 10px 20px;
 }
 .router-link-exact-active {
-  background-color: brown;
+  background-color: #28a745;
   border-radius: 5px;
 }
 </style>
