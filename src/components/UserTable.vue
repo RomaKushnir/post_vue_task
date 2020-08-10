@@ -1,8 +1,8 @@
 <template>
   <div>
-    <Modal v-if="showModal" @close-modal="showModal = false">
-      <p v-for="i in this.userInfo" :key="i">{{i}}</p>
-    </Modal>
+    <modal v-if="showModal" @close-modal="showModal = false">
+      <p v-for="(el, i) in this.userInfo" :key="i">{{el}}</p>
+    </modal>
     <table class="table">
       <thead>
         <tr>
@@ -17,7 +17,7 @@
           <td>{{user.id}}</td>
           <td>
             <div class="table-cell-wrap">
-              <p>{{user.name}}</p>
+              <span>{{user.name}}</span>
               <button @click="getUserInfo(user.company)">info</button>
             </div>
           </td>
@@ -47,10 +47,12 @@ export default {
   },
   methods: {
     ...mapActions(["getUsers"]),
-    getUserInfo(i) {
+    getUserInfo(item) {
       this.showModal = true;
-      this.userInfo = i;
-      console.log(i);
+      this.userInfo = item;
+      // console.log("this", this);
+      // console.log("local data", this.userInfo);
+      // console.log("user company", item);
     }
   },
   mounted() {

@@ -32,8 +32,7 @@ h2 {
   margin: 20px 0;
 }
 
-h3,
-p {
+h3 {
   font-size: 1.3rem;
   margin: 0;
 }

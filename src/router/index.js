@@ -20,6 +20,11 @@ const routes = [
     name: "Users",
     component: () => import("../views/Users.vue"),
   },
+  {
+    path: "/post/:postId",
+    name: "post",
+    component: () => import("../views/PostReviewPage.vue"),
+  },
 ];
 
 const router = new VueRouter({

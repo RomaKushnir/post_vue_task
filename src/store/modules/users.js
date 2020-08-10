@@ -9,7 +9,7 @@ export default {
   },
   mutations: {
     updateUsers(state, users) {
-      console.log(users);
+      // console.log(users);
       state.users = users;
     },
   },

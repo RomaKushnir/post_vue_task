@@ -1,13 +1,15 @@
 <template>
   <div class="post-item post-item-wrap">
     <div class="post-item-body">
-      <h3 class="post-header">{{post.title}}</h3>
+      <router-link v-bind:to="'/post/' + post.id">
+        <h3 class="post-header">{{post.title}}</h3>
+      </router-link>
       <p class="post-text">{{post.body}}</p>
     </div>
-    <div class="button-wrap">
-      <!-- <button class="btn-remove" v-on:click="$emit('remove-post', post.id)">remove</button> -->
-      <button class="btn-remove" @click="removePost(post.id)">remove</button>
-    </div>
+    <!-- <div class="button-wrap"> -->
+    <!-- <button class="btn-remove" v-on:click="$emit('remove-post', post.id)">remove</button> -->
+    <!-- <button class="btn-remove" @click="removePost(post.id)">remove</button> -->
+    <!-- </div> -->
   </div>
 </template>
 
@@ -19,10 +21,18 @@ export default {
       required: true
     }
   },
+  data() {
+    return {
+      id: this.$route.params.postId
+    };
+  },
   methods: {
     removePost(id) {
       // this.$emit("remove-post", this.post.id);
       this.$emit("remove-post", id);
+    },
+    created() {
+      this.$route = this.post.id;
     }
   }
 };
